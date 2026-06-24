@@ -90,23 +90,67 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* App screenshot */}
-        <div className="mt-20 max-w-4xl mx-auto">
-          <div
-            className="rounded-xl border overflow-hidden shadow-2xl"
-            style={{
-              borderColor: "var(--color-border)",
-              boxShadow: "0 25px 80px rgba(0,0,0,0.6)",
-            }}
-          >
-            <Image
-              src="/screenshots/initial_state.png"
-              alt="AR Workspace — initial state showing the view tab bar and empty canvas"
-              width={1456}
-              height={816}
-              className="w-full h-auto block"
-              priority
-            />
+        {/* App screenshots — stacked */}
+        <div className="mt-20 max-w-4xl mx-auto" style={{ perspective: "1200px" }}>
+          <div className="relative" style={{ paddingBottom: "56.2%" /* 816/1456 */ }}>
+
+            {/* Back — initial state */}
+            <div
+              className="absolute inset-0 rounded-xl border overflow-hidden"
+              style={{
+                transform: "rotate(-4deg) translate(-2.5%, 2%)",
+                borderColor: "var(--color-border)",
+                boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
+                zIndex: 1,
+              }}
+            >
+              <Image
+                src="/screenshots/initial_state.png"
+                alt="AR Workspace — initial empty state"
+                width={1456}
+                height={816}
+                className="w-full h-auto block"
+              />
+            </div>
+
+            {/* Middle — three terminals */}
+            <div
+              className="absolute inset-0 rounded-xl border overflow-hidden"
+              style={{
+                transform: "rotate(2deg) translate(1.5%, 1%)",
+                borderColor: "var(--color-border)",
+                boxShadow: "0 15px 55px rgba(0,0,0,0.55)",
+                zIndex: 2,
+              }}
+            >
+              <Image
+                src="/screenshots/three_terminals.png"
+                alt="AR Workspace — three terminal panes open"
+                width={1456}
+                height={816}
+                className="w-full h-auto block"
+              />
+            </div>
+
+            {/* Front — multiple views */}
+            <div
+              className="absolute inset-0 rounded-xl border overflow-hidden"
+              style={{
+                borderColor: "var(--color-border)",
+                boxShadow: "0 25px 80px rgba(0,0,0,0.6)",
+                zIndex: 3,
+              }}
+            >
+              <Image
+                src="/screenshots/multiple_views.png"
+                alt="AR Workspace — multiple named views with docked panels"
+                width={1456}
+                height={816}
+                className="w-full h-auto block"
+                priority
+              />
+            </div>
+
           </div>
         </div>
       </div>

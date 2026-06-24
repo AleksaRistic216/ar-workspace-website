@@ -7,9 +7,11 @@ baseline of what the app looks like on each platform.
 
 ## Current screenshots
 
-| File in `public/screenshots/` | Source path on `screenshot-baselines` | Used in |
-|---|---|---|
-| `initial_state.png` | `linux/initial_state.png` | `Hero.tsx` |
+| File in `public/screenshots/` | Source path on `screenshot-baselines` | Used in | Stack position |
+|---|---|---|---|
+| `initial_state.png` | `linux/initial_state.png` | `Hero.tsx` | back |
+| `three_terminals.png` | `linux/three_terminals.png` | `Hero.tsx` | middle |
+| `multiple_views.png` | `linux/multiple_views.png` | `Hero.tsx` | front (priority) |
 
 ## How to update
 
@@ -47,7 +49,9 @@ After copying, commit the updated PNG(s) to this repo and redeploy to Vercel.
 ```
 screenshot-baselines (orphan)
 └── linux/
-    └── initial_state.png   ← Linux CI baseline (Mesa/llvmpipe)
+    ├── initial_state.png    ← empty canvas (back of hero stack)
+    ├── three_terminals.png  ← three terminal panes (middle of hero stack)
+    └── multiple_views.png   ← multiple named views (front of hero stack)
 ```
 
 Windows baselines live under `windows/` once they are committed by CI.

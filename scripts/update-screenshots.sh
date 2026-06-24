@@ -24,6 +24,8 @@ copy_baseline() {
   git -C "$AR_WORKSPACE_DIR" show "origin/screenshot-baselines:$src" > "$DEST/$dst"
 }
 
-copy_baseline "linux/initial_state.png" "initial_state.png"
+copy_baseline "linux/initial_state.png"   "initial_state.png"
+copy_baseline "linux/three_terminals.png" "three_terminals.png"
+copy_baseline "linux/multiple_views.png"  "multiple_views.png"
 
 echo "Done. Commit public/screenshots/ and redeploy to Vercel."
