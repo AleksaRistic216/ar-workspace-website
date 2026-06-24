@@ -74,7 +74,7 @@ export default function Pricing() {
                   className="text-5xl font-bold tracking-tight"
                   style={{ color: "var(--color-foreground)" }}
                 >
-                  $44
+                  €8
                 </span>
                 <span className="text-base mb-1.5" style={{ color: "var(--color-muted)" }}>
                   / month
@@ -116,7 +116,7 @@ export default function Pricing() {
                 className="block w-full text-center py-3 rounded-lg font-semibold text-sm transition-opacity"
                 style={{ background: "var(--color-accent)", color: "#fff" }}
               >
-                Get Started — $44 / month
+                Get Started — €8 / month
               </a>
               <p className="mt-3 text-center text-xs" style={{ color: "var(--color-muted)" }}>
                 Cancel any time. No long-term commitment.
