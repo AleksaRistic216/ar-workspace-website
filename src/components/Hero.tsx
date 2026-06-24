@@ -9,21 +9,32 @@ const screenshots = screenshotsConfig.map((s) => ({
   alt: s.alt,
 }));
 
-const stackSlots = [
-  { zIndex: 3, transform: "rotate(0deg) translate(0%, 0%)",      shadow: "0 25px 80px rgba(0,0,0,0.6)" },
-  { zIndex: 2, transform: "rotate(2deg) translate(1.5%, 1%)",    shadow: "0 15px 55px rgba(0,0,0,0.55)" },
-  { zIndex: 1, transform: "rotate(-4deg) translate(-2.5%, 2%)",  shadow: "0 10px 40px rgba(0,0,0,0.5)" },
-];
+function buildSlots(n: number) {
+  return Array.from({ length: n }, (_, i) => {
+    if (i === 0) {
+      return { zIndex: n, transform: "rotate(0deg) translate(0%, 0%)", shadow: "0 25px 80px rgba(0,0,0,0.6)" };
+    }
+    const sign = i % 2 === 0 ? -1 : 1;
+    const rot   = sign * (2 + i * 1.5);
+    const tx    = sign * (1.5 + i * 0.5);
+    const ty    = 1 + i * 0.5;
+    const blur  = Math.max(30, 80 - i * 10);
+    const spread = Math.max(10, 25 - i * 3);
+    return {
+      zIndex: n - i,
+      transform: `rotate(${rot}deg) translate(${tx}%, ${ty}%)`,
+      shadow: `0 ${spread}px ${blur}px rgba(0,0,0,0.5)`,
+    };
+  });
+}
 
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const n = screenshots.length;
+  const slots = buildSlots(n);
 
   const prev = () => setActiveIndex((i) => (i - 1 + n) % n);
   const next = () => setActiveIndex((i) => (i + 1) % n);
-
-  // Show a sliding window of 3: front, middle, back
-  const visible = [0, 1, 2].map((offset) => screenshots[(activeIndex + offset) % n]);
 
   return (
     <section className="relative pt-32 pb-24 px-6 overflow-hidden">
@@ -117,8 +128,9 @@ export default function Hero() {
         {/* App screenshots — navigable stack */}
         <div className="mt-20 max-w-4xl mx-auto">
           <div className="relative" style={{ paddingBottom: "56.2%" /* 816/1456 */ }}>
-            {visible.map((shot, slot) => {
-              const { zIndex, transform, shadow } = stackSlots[slot];
+            {screenshots.map((shot, imgIndex) => {
+              const slot = (imgIndex - activeIndex + n) % n;
+              const { zIndex, transform, shadow } = slots[slot];
               return (
                 <div
                   key={shot.src}
