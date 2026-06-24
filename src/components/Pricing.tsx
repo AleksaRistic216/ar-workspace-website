@@ -110,9 +110,7 @@ export default function Pricing() {
             {/* CTA */}
             <div className="px-8 pb-8">
               <a
-                href="https://github.com/AleksaRistic216/ar-workspace-release"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/download"
                 className="block w-full text-center py-3 rounded-lg font-semibold text-sm transition-opacity"
                 style={{ background: "var(--color-accent)", color: "#fff" }}
               >

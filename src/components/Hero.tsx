@@ -104,9 +104,7 @@ export default function Hero() {
         {/* CTA */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://github.com/AleksaRistic216/ar-workspace-release"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/download"
             className="px-6 py-3 rounded-lg font-medium text-sm transition-opacity"
             style={{ background: "var(--color-accent)", color: "#fff" }}
           >

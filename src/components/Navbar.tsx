@@ -45,9 +45,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://github.com/AleksaRistic216/ar-workspace-release"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/download"
             className="text-sm px-4 py-1.5 rounded-md transition-opacity"
             style={{ background: "var(--color-accent)", color: "#fff" }}
             onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.opacity = "0.85")}
@@ -93,9 +91,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://github.com/AleksaRistic216/ar-workspace-release"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/download"
             className="text-sm px-4 py-2 rounded-md text-center"
             style={{ background: "var(--color-accent)", color: "#fff" }}
           >
