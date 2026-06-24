@@ -8,5 +8,25 @@
     "branch": "linux/three_terminals.png",
     "dest": "three_terminals.png",
     "alt": "AR Workspace — three terminal panes open"
+  },
+  {
+    "branch": "linux/two_terminals.png",
+    "dest": "two_terminals.png",
+    "alt": "AR Workspace — two terminal panes side by side"
+  },
+  {
+    "branch": "linux/single_terminal.png",
+    "dest": "single_terminal.png",
+    "alt": "AR Workspace — single terminal session"
+  },
+  {
+    "branch": "linux/large_ui_scale.png",
+    "dest": "large_ui_scale.png",
+    "alt": "AR Workspace — large UI scale"
+  },
+  {
+    "branch": "linux/small_ui_scale.png",
+    "dest": "small_ui_scale.png",
+    "alt": "AR Workspace — small UI scale"
   }
 ]

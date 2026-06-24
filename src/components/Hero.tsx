@@ -22,6 +22,9 @@ export default function Hero() {
   const prev = () => setActiveIndex((i) => (i - 1 + n) % n);
   const next = () => setActiveIndex((i) => (i + 1) % n);
 
+  // Show a sliding window of 3: front, middle, back
+  const visible = [0, 1, 2].map((offset) => screenshots[(activeIndex + offset) % n]);
+
   return (
     <section className="relative pt-32 pb-24 px-6 overflow-hidden">
       {/* Ambient glow */}
@@ -114,8 +117,7 @@ export default function Hero() {
         {/* App screenshots — navigable stack */}
         <div className="mt-20 max-w-4xl mx-auto">
           <div className="relative" style={{ paddingBottom: "56.2%" /* 816/1456 */ }}>
-            {screenshots.map((shot, imgIndex) => {
-              const slot = (imgIndex - activeIndex + n) % n;
+            {visible.map((shot, slot) => {
               const { zIndex, transform, shadow } = stackSlots[slot];
               return (
                 <div
@@ -135,7 +137,7 @@ export default function Hero() {
                     width={1456}
                     height={816}
                     className="w-full h-auto block"
-                    priority={imgIndex === activeIndex}
+                    priority={slot === 0}
                   />
                 </div>
               );
