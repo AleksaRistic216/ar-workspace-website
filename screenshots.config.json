@@ -1,0 +1,17 @@
+[
+  {
+    "branch": "linux/multiple_views.png",
+    "dest": "multiple_views.png",
+    "alt": "AR Workspace — multiple named views with docked panels"
+  },
+  {
+    "branch": "linux/three_terminals.png",
+    "dest": "three_terminals.png",
+    "alt": "AR Workspace — three terminal panes open"
+  },
+  {
+    "branch": "linux/initial_state.png",
+    "dest": "initial_state.png",
+    "alt": "AR Workspace — initial empty state"
+  }
+]

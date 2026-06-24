@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 # Pull latest screenshot baselines from ar-workspace into public/screenshots/.
+# Which files to pull is controlled by screenshots.config.json at the repo root.
 # See docs/screenshots.md for full documentation.
 set -euo pipefail
 
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 AR_WORKSPACE_DIR="${AR_WORKSPACE_DIR:-/home/parpil/source/ar-workspace}"
-DEST="$(cd "$(dirname "$0")/.." && pwd)/public/screenshots"
+DEST="$ROOT/public/screenshots"
+CONFIG="$ROOT/screenshots.config.json"
 
 if [ ! -d "$AR_WORKSPACE_DIR/.git" ]; then
   echo "error: ar-workspace repo not found at $AR_WORKSPACE_DIR" >&2
@@ -24,8 +27,12 @@ copy_baseline() {
   git -C "$AR_WORKSPACE_DIR" show "origin/screenshot-baselines:$src" > "$DEST/$dst"
 }
 
-copy_baseline "linux/initial_state.png"   "initial_state.png"
-copy_baseline "linux/three_terminals.png" "three_terminals.png"
-copy_baseline "linux/multiple_views.png"  "multiple_views.png"
+# Read entries from screenshots.config.json
+node -e "
+  const cfg = JSON.parse(require('fs').readFileSync('$CONFIG', 'utf8'));
+  cfg.forEach(s => process.stdout.write(s.branch + '\t' + s.dest + '\n'));
+" | while IFS=$'\t' read -r src dest; do
+  copy_baseline "$src" "$dest"
+done
 
 echo "Done. Commit public/screenshots/ and redeploy to Vercel."

@@ -2,21 +2,12 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import screenshotsConfig from "../../screenshots.config.json";
 
-const screenshots = [
-  {
-    src: "/screenshots/multiple_views.png",
-    alt: "AR Workspace — multiple named views with docked panels",
-  },
-  {
-    src: "/screenshots/three_terminals.png",
-    alt: "AR Workspace — three terminal panes open",
-  },
-  {
-    src: "/screenshots/initial_state.png",
-    alt: "AR Workspace — initial empty state",
-  },
-];
+const screenshots = screenshotsConfig.map((s) => ({
+  src: `/screenshots/${s.dest}`,
+  alt: s.alt,
+}));
 
 const stackSlots = [
   { zIndex: 3, transform: "rotate(0deg) translate(0%, 0%)",      shadow: "0 25px 80px rgba(0,0,0,0.6)" },
