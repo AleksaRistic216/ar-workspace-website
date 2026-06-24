@@ -116,7 +116,7 @@ export default function Pricing() {
                 className="block w-full text-center py-3 rounded-lg font-semibold text-sm transition-opacity"
                 style={{ background: "var(--color-accent)", color: "#fff" }}
               >
-                Get Started — €8 / month
+                Download
               </a>
               <p className="mt-3 text-center text-xs" style={{ color: "var(--color-muted)" }}>
                 Cancel any time. No long-term commitment.
