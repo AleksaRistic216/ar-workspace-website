@@ -1,6 +1,36 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+
+const screenshots = [
+  {
+    src: "/screenshots/multiple_views.png",
+    alt: "AR Workspace — multiple named views with docked panels",
+  },
+  {
+    src: "/screenshots/three_terminals.png",
+    alt: "AR Workspace — three terminal panes open",
+  },
+  {
+    src: "/screenshots/initial_state.png",
+    alt: "AR Workspace — initial empty state",
+  },
+];
+
+const stackSlots = [
+  { zIndex: 3, transform: "rotate(0deg) translate(0%, 0%)",      shadow: "0 25px 80px rgba(0,0,0,0.6)" },
+  { zIndex: 2, transform: "rotate(2deg) translate(1.5%, 1%)",    shadow: "0 15px 55px rgba(0,0,0,0.55)" },
+  { zIndex: 1, transform: "rotate(-4deg) translate(-2.5%, 2%)",  shadow: "0 10px 40px rgba(0,0,0,0.5)" },
+];
 
 export default function Hero() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const n = screenshots.length;
+
+  const prev = () => setActiveIndex((i) => (i - 1 + n) % n);
+  const next = () => setActiveIndex((i) => (i + 1) % n);
+
   return (
     <section className="relative pt-32 pb-24 px-6 overflow-hidden">
       {/* Ambient glow */}
@@ -90,67 +120,68 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* App screenshots — stacked */}
-        <div className="mt-20 max-w-4xl mx-auto" style={{ perspective: "1200px" }}>
+        {/* App screenshots — navigable stack */}
+        <div className="mt-20 max-w-4xl mx-auto">
           <div className="relative" style={{ paddingBottom: "56.2%" /* 816/1456 */ }}>
+            {screenshots.map((shot, imgIndex) => {
+              const slot = (imgIndex - activeIndex + n) % n;
+              const { zIndex, transform, shadow } = stackSlots[slot];
+              return (
+                <div
+                  key={shot.src}
+                  className="absolute inset-0 rounded-xl border overflow-hidden"
+                  style={{
+                    zIndex,
+                    transform,
+                    boxShadow: shadow,
+                    borderColor: "var(--color-border)",
+                    transition: "transform 0.4s ease, box-shadow 0.4s ease",
+                  }}
+                >
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={1456}
+                    height={816}
+                    className="w-full h-auto block"
+                    priority={imgIndex === activeIndex}
+                  />
+                </div>
+              );
+            })}
 
-            {/* Back — initial state */}
+            {/* Arrow controls — bottom overlay */}
             <div
-              className="absolute inset-0 rounded-xl border overflow-hidden"
-              style={{
-                transform: "rotate(-4deg) translate(-2.5%, 2%)",
-                borderColor: "var(--color-border)",
-                boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
-                zIndex: 1,
-              }}
+              className="absolute bottom-4 left-1/2 flex items-center gap-3"
+              style={{ transform: "translateX(-50%)", zIndex: 10 }}
             >
-              <Image
-                src="/screenshots/initial_state.png"
-                alt="AR Workspace — initial empty state"
-                width={1456}
-                height={816}
-                className="w-full h-auto block"
-              />
+              <button
+                onClick={prev}
+                aria-label="Previous screenshot"
+                className="flex items-center justify-center w-8 h-8 rounded-full border text-sm font-medium transition-colors"
+                style={{
+                  background: "rgba(12,12,15,0.75)",
+                  backdropFilter: "blur(8px)",
+                  borderColor: "var(--color-border)",
+                  color: "var(--color-foreground)",
+                }}
+              >
+                ‹
+              </button>
+              <button
+                onClick={next}
+                aria-label="Next screenshot"
+                className="flex items-center justify-center w-8 h-8 rounded-full border text-sm font-medium transition-colors"
+                style={{
+                  background: "rgba(12,12,15,0.75)",
+                  backdropFilter: "blur(8px)",
+                  borderColor: "var(--color-border)",
+                  color: "var(--color-foreground)",
+                }}
+              >
+                ›
+              </button>
             </div>
-
-            {/* Middle — three terminals */}
-            <div
-              className="absolute inset-0 rounded-xl border overflow-hidden"
-              style={{
-                transform: "rotate(2deg) translate(1.5%, 1%)",
-                borderColor: "var(--color-border)",
-                boxShadow: "0 15px 55px rgba(0,0,0,0.55)",
-                zIndex: 2,
-              }}
-            >
-              <Image
-                src="/screenshots/three_terminals.png"
-                alt="AR Workspace — three terminal panes open"
-                width={1456}
-                height={816}
-                className="w-full h-auto block"
-              />
-            </div>
-
-            {/* Front — multiple views */}
-            <div
-              className="absolute inset-0 rounded-xl border overflow-hidden"
-              style={{
-                borderColor: "var(--color-border)",
-                boxShadow: "0 25px 80px rgba(0,0,0,0.6)",
-                zIndex: 3,
-              }}
-            >
-              <Image
-                src="/screenshots/multiple_views.png"
-                alt="AR Workspace — multiple named views with docked panels"
-                width={1456}
-                height={816}
-                className="w-full h-auto block"
-                priority
-              />
-            </div>
-
           </div>
         </div>
       </div>
