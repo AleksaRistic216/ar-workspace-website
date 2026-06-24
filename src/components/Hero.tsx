@@ -155,32 +155,33 @@ export default function Hero() {
               className="absolute bottom-4 left-1/2 flex items-center gap-3"
               style={{ transform: "translateX(-50%)", zIndex: 10 }}
             >
-              <button
-                onClick={prev}
-                aria-label="Previous screenshot"
-                className="flex items-center justify-center w-8 h-8 rounded-full border text-sm font-medium transition-colors"
-                style={{
-                  background: "rgba(12,12,15,0.75)",
-                  backdropFilter: "blur(8px)",
-                  borderColor: "var(--color-border)",
-                  color: "var(--color-foreground)",
-                }}
-              >
-                ‹
-              </button>
-              <button
-                onClick={next}
-                aria-label="Next screenshot"
-                className="flex items-center justify-center w-8 h-8 rounded-full border text-sm font-medium transition-colors"
-                style={{
-                  background: "rgba(12,12,15,0.75)",
-                  backdropFilter: "blur(8px)",
-                  borderColor: "var(--color-border)",
-                  color: "var(--color-foreground)",
-                }}
-              >
-                ›
-              </button>
+              {[{ label: "Previous screenshot", handler: prev, glyph: "‹" },
+                { label: "Next screenshot",     handler: next, glyph: "›" }].map(({ label, handler, glyph }) => (
+                <button
+                  key={label}
+                  onClick={handler}
+                  aria-label={label}
+                  className="flex items-center justify-center w-9 h-9 rounded-full border text-base font-medium cursor-pointer select-none"
+                  style={{
+                    background: "var(--color-surface-2)",
+                    borderColor: "var(--color-border)",
+                    color: "var(--color-foreground)",
+                    transition: "background 0.15s, border-color 0.15s, color 0.15s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "var(--color-accent)";
+                    e.currentTarget.style.borderColor = "var(--color-accent)";
+                    e.currentTarget.style.color = "#fff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "var(--color-surface-2)";
+                    e.currentTarget.style.borderColor = "var(--color-border)";
+                    e.currentTarget.style.color = "var(--color-foreground)";
+                  }}
+                >
+                  {glyph}
+                </button>
+              ))}
             </div>
           </div>
         </div>
