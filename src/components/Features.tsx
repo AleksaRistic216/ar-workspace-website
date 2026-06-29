@@ -27,7 +27,7 @@ const features = [
       </svg>
     ),
     title: "AI Workflow Pipeline",
-    body: "Chain steps that rewrite prompts before they reach Claude Code or Copilot — prepend, append, script, detect.",
+    body: "Chain steps that rewrite prompts before they reach Claude Code or Copilot - prepend, append, script, detect.",
   },
   {
     icon: (
@@ -39,7 +39,7 @@ const features = [
       </svg>
     ),
     title: "AI Tool Detection",
-    body: "Live status badge when Claude Code or Copilot is running — tool name, spinner, token count. Zero config.",
+    body: "Live status badge when Claude Code or Copilot is running - tool name, spinner, token count. Zero config.",
   },
   {
     icon: (
@@ -49,7 +49,7 @@ const features = [
       </svg>
     ),
     title: "Keyboard Navigation",
-    body: "Focus, move, and resize any panel without touching the mouse. Navigate views, open terminals, split panes — every action has a binding.",
+    body: "Focus, move, and resize any panel without touching the mouse. Navigate views, open terminals, split panes - every action has a binding.",
   },
   {
     icon: (
@@ -59,7 +59,7 @@ const features = [
       </svg>
     ),
     title: "Native Performance",
-    body: "Launches instantly, stays responsive under load. Inactive views drop to near-zero CPU and memory — your machine stays free for the work that matters.",
+    body: "Launches instantly, stays responsive under load. Inactive views drop to near-zero CPU and memory - your machine stays free for the work that matters.",
   },
 ];
 

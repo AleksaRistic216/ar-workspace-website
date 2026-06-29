@@ -21,11 +21,11 @@ const quirks = [
     items: [
       {
         title: "Clipboard that actually works",
-        body: "Ctrl+Shift+V pastes text via ConPTY — no accidental ^V control character to the shell. Alt+V is forwarded as ESC+v so AI tools like Copilot CLI can handle image paste themselves.",
+        body: "Ctrl+Shift+V pastes text via ConPTY - no accidental ^V control character to the shell. Alt+V is forwarded as ESC+v so AI tools like Copilot CLI can handle image paste themselves.",
       },
       {
         title: "Any shell you want",
-        body: "PowerShell, PowerShell Core, cmd.exe, or Git Bash — pick your shell in Settings. Git Bash uses the ConPTY-compatible binary (git/bin/bash.exe), not the MinTTY wrapper.",
+        body: "PowerShell, PowerShell Core, cmd.exe, or Git Bash - pick your shell in Settings. Git Bash uses the ConPTY-compatible binary (git/bin/bash.exe), not the MinTTY wrapper.",
       },
       {
         title: "No console window",
@@ -43,11 +43,11 @@ const quirks = [
     items: [
       {
         title: "AppImage works on modern distros",
-        body: "Modern Fedora and Ubuntu ship FUSE 3 only, which breaks standard AppImages. AR Workspace ships with the type2 runtime that supports both FUSE 2 and FUSE 3 — it just runs.",
+        body: "Modern Fedora and Ubuntu ship FUSE 3 only, which breaks standard AppImages. AR Workspace ships with the type2 runtime that supports both FUSE 2 and FUSE 3 - it just runs.",
       },
       {
         title: "Atomic updates",
-        body: "The in-app updater replaces the binary atomically via rename(2) while the app is running. The next launch picks up the new binary — no package manager, no sudo.",
+        body: "The in-app updater replaces the binary atomically via rename(2) while the app is running. The next launch picks up the new binary - no package manager, no sudo.",
       },
       {
         title: "Shell from $SHELL",
@@ -73,7 +73,7 @@ export default function CrossPlatform() {
             className="text-3xl md:text-4xl font-bold tracking-tight"
             style={{ color: "var(--color-foreground)" }}
           >
-            One workflow. Linux, Windows, macOS.
+            One cross-platform terminal. Linux, Windows, macOS.
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-base" style={{ color: "var(--color-muted)" }}>
             The same shortcuts work identically on Linux, Windows, and macOS. No mental context-switching,

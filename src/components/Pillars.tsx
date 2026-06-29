@@ -1,7 +1,7 @@
 const pillars = [
   {
     heading: "One workspace.",
-    body: "Every tool you need — terminals, panels, AI — in a single organized window.",
+    body: "Every tool you need - terminals, panels, AI - in a single organized window.",
   },
   {
     heading: "Every platform.",
@@ -13,7 +13,7 @@ const pillars = [
   },
   {
     heading: "1-day bugfix.",
-    body: "Report a bug or request a feature — we will have it implemented within a day.",
+    body: "Report a bug or request a feature - we will have it implemented within a day.",
   },
 ];
 

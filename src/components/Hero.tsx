@@ -77,14 +77,14 @@ export default function Hero() {
           className="mt-6 text-center text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
           style={{ color: "var(--color-muted)" }}
         >
-          You stay in flow. Your setup, your shortcuts, your layout —
+          AR Workspace (ARW) keeps you in flow. Your setup, your shortcuts, your layout -
           exactly the same on Linux, Windows, and macOS.
         </p>
 
         {/* Trust pills */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           {[
-            "No installation — extract and run",
+            "No installation - extract and run",
             "Fully keyboard-driven",
             "Linux · Windows · macOS",
           ].map((pill) => (
@@ -123,7 +123,7 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* App screenshots — navigable stack */}
+        {/* App screenshots - navigable stack */}
         <div className="mt-20 max-w-4xl mx-auto">
           <div className="relative" style={{ paddingBottom: "56.2%" /* 816/1456 */ }}>
             {screenshots.map((shot, imgIndex) => {
@@ -153,7 +153,7 @@ export default function Hero() {
               );
             })}
 
-            {/* Arrow controls — bottom overlay */}
+            {/* Arrow controls - bottom overlay */}
             <div
               className="absolute bottom-4 left-1/2 flex items-center gap-3"
               style={{ transform: "translateX(-50%)", zIndex: 10 }}

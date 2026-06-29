@@ -162,7 +162,7 @@ export default function DownloadPage() {
               </div>
             </div>
 
-            {/* macOS — disabled */}
+            {/* macOS - disabled */}
             <div
               className="rounded-xl border p-6 flex flex-col gap-4 opacity-50"
               style={{ background: "var(--color-surface)", borderColor: "var(--color-border)" }}
