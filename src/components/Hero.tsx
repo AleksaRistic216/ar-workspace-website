@@ -77,8 +77,8 @@ export default function Hero() {
           className="mt-6 text-center text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
           style={{ color: "var(--color-muted)" }}
         >
-          Organize terminals, panels, and AI tools the same way on Linux, Windows, and macOS —
-          same shortcuts, same layout, zero relearning.
+          You stay in flow. Your setup, your shortcuts, your layout —
+          exactly the same on Linux, Windows, and macOS.
         </p>
 
         {/* Trust pills */}

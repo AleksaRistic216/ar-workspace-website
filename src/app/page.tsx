@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Pillars from "@/components/Pillars";
 import Features from "@/components/Features";
 import CrossPlatform from "@/components/CrossPlatform";
 import Pricing from "@/components/Pricing";
@@ -11,6 +12,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Pillars />
         <Features />
         <CrossPlatform />
         <Pricing />

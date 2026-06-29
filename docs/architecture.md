@@ -14,6 +14,7 @@ layout.tsx               ← metadata, font vars, global CSS
 ├── page.tsx             ← landing page
 │   ├── Navbar           ← fixed header, mobile hamburger menu
 │   ├── Hero             ← headline, trust pills, CTA, navigable screenshot stack
+│   ├── Pillars          ← 4-column strip: key selling points (One workspace / Every platform / Terminal that just works / 1-day bugfix)
 │   ├── Features         ← 3-column card grid (6 feature cards)
 │   ├── CrossPlatform    ← shortcut table + platform quirks (Windows / Linux)
 │   ├── Pricing          ← single Pro card at €8/month
