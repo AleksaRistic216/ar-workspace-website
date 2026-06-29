@@ -30,7 +30,7 @@ export default function Pricing() {
             Simple, honest pricing
           </h2>
           <p className="mt-4 text-base" style={{ color: "var(--color-muted)" }}>
-            One plan. Everything included. Cancel any time.
+            One plan. Everything included. Pay once, own it.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export default function Pricing() {
                 Download
               </a>
               <p className="mt-3 text-center text-xs" style={{ color: "var(--color-muted)" }}>
-                Cancel any time. No long-term commitment.
+                One-time payment. No subscription.
               </p>
             </div>
           </div>

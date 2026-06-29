@@ -110,17 +110,6 @@ export default function Hero() {
           >
             Download Now
           </a>
-          <a
-            href="#features"
-            className="px-6 py-3 rounded-lg font-medium text-sm border transition-colors"
-            style={{
-              color: "var(--color-foreground)",
-              borderColor: "var(--color-border)",
-              background: "var(--color-surface)",
-            }}
-          >
-            See Features
-          </a>
         </div>
 
         {/* App screenshots - navigable stack */}
