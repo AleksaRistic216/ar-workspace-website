@@ -1,6 +1,7 @@
 const shortcuts = [
   { action: "Copy selection", keys: "Ctrl+Shift+C" },
   { action: "Paste text", keys: "Ctrl+Shift+V" },
+  { action: "Paste image", keys: "Ctrl+V" },
   { action: "New terminal tab", keys: "Ctrl+Shift+T" },
   { action: "Split below", keys: "Ctrl+Shift+G" },
   { action: "Split right", keys: "Ctrl+Shift+F" },
@@ -21,7 +22,11 @@ const quirks = [
     items: [
       {
         title: "Clipboard that actually works",
-        body: "Ctrl+Shift+V pastes text via ConPTY - no accidental ^V control character to the shell. Alt+V is forwarded as ESC+v so AI tools like Copilot CLI can handle image paste themselves.",
+        body: "Ctrl+Shift+V pastes text. Ctrl+V pastes images. Same shortcuts on every platform - no relearning when you switch machines.",
+      },
+      {
+        title: "Instant large paste",
+        body: "Windows ConPTY throttles large pastes, making them slow and stuttery. CPT bypasses this - long text pastes instantly, regardless of size.",
       },
       {
         title: "Any shell you want",

@@ -1,15 +1,15 @@
 const pillars = [
   {
-    heading: "One workspace.",
-    body: "Every tool you need - terminals, panels, AI - in a single organized window.",
-  },
-  {
-    heading: "Every platform.",
-    body: "Linux, Windows, macOS. Same layout, same shortcuts, zero relearning.",
-  },
-  {
     heading: "Terminal that just works.",
     body: "Full VT support, tabbed sessions, scrollback. No setup, no quirks.",
+  },
+  {
+    heading: "GPU-accelerated rendering.",
+    body: "The entire terminal grid renders in a single GPU draw call. Smooth scrolling at any size, no CPU overhead on rendering.",
+  },
+  {
+    heading: "Quirks resolution.",
+    body: "Cross-platform terminal quirks get caught and fixed - rendering glitches, escape sequence mismatches, input edge cases. You never debug them.",
   },
   {
     heading: "1-day bugfix.",
@@ -20,7 +20,16 @@ const pillars = [
 export default function Pillars() {
   return (
     <section className="py-16 px-6 border-t" style={{ borderColor: "var(--color-border)" }}>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "var(--color-accent)" }}>
+            Why CPT
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: "var(--color-foreground)" }}>
+            Built to get out of your way.
+          </h2>
+        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {pillars.map((p) => (
           <div key={p.heading} className="flex flex-col gap-2">
             <h2
@@ -34,6 +43,7 @@ export default function Pillars() {
             </p>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
