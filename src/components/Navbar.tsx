@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,12 +18,7 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 font-semibold text-[15px]">
-          <span
-            className="w-7 h-7 rounded flex items-center justify-center text-sm font-bold"
-            style={{ background: "var(--color-accent)", color: "#fff" }}
-          >
-            CPT
-          </span>
+          <Image src="/icon.png" alt="CPT" width={28} height={28} className="rounded" />
           <span style={{ color: "var(--color-foreground)" }}>Cross Platform Terminal</span>
         </a>
 
