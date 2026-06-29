@@ -7,15 +7,15 @@ export default function Footer() {
             className="w-6 h-6 rounded flex items-center justify-center text-xs font-bold"
             style={{ background: "var(--color-accent)", color: "#fff" }}
           >
-            AR
+            CPT
           </span>
           <span className="text-sm font-semibold" style={{ color: "var(--color-foreground)" }}>
-            AR Workspace
+            Cross Platform Terminal
           </span>
         </div>
 
         <p className="text-xs" style={{ color: "var(--color-muted)" }}>
-          © {new Date().getFullYear()} AR Workspace. All rights reserved.
+          © {new Date().getFullYear()} Cross Platform Terminal. All rights reserved.
         </p>
 
         <div className="flex items-center gap-5">

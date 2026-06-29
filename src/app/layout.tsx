@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AR Workspace (ARW) - Cross-Platform Terminal & Developer Workspace",
+  title: "Cross Platform Terminal (CPT) - Developer Workspace for Linux, Windows & macOS",
   description:
-    "AR Workspace (ARW) is a cross-platform terminal and developer workspace with dockable panels and AI workflow integration for Claude Code and GitHub Copilot. Runs on Linux, Windows, and macOS.",
+    "Cross Platform Terminal (CPT) is a cross-platform terminal and developer workspace with dockable panels and AI workflow integration for Claude Code and GitHub Copilot. Runs on Linux, Windows, and macOS.",
 };
 
 export default function RootLayout({

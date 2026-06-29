@@ -84,7 +84,7 @@ export default function DownloadPage() {
               Download
             </p>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: "var(--color-foreground)" }}>
-              Get AR Workspace
+              Get Cross Platform Terminal
             </h1>
             {release && (
               <p className="mt-3 text-sm" style={{ color: "var(--color-muted)" }}>

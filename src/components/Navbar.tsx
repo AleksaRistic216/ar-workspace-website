@@ -21,9 +21,9 @@ export default function Navbar() {
             className="w-7 h-7 rounded flex items-center justify-center text-sm font-bold"
             style={{ background: "var(--color-accent)", color: "#fff" }}
           >
-            AR
+            CPT
           </span>
-          <span style={{ color: "var(--color-foreground)" }}>Workspace</span>
+          <span style={{ color: "var(--color-foreground)" }}>Cross Platform Terminal</span>
         </a>
 
         {/* Desktop nav */}

@@ -77,7 +77,7 @@ export default function Hero() {
           className="mt-6 text-center text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
           style={{ color: "var(--color-muted)" }}
         >
-          AR Workspace (ARW) keeps you in flow. Your setup, your shortcuts, your layout -
+          Cross Platform Terminal (CPT) keeps you in flow. Your setup, your shortcuts, your layout -
           exactly the same on Linux, Windows, and macOS.
         </p>
 

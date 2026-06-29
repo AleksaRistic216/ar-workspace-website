@@ -43,7 +43,7 @@ const quirks = [
     items: [
       {
         title: "AppImage works on modern distros",
-        body: "Modern Fedora and Ubuntu ship FUSE 3 only, which breaks standard AppImages. AR Workspace ships with the type2 runtime that supports both FUSE 2 and FUSE 3 - it just runs.",
+        body: "Modern Fedora and Ubuntu ship FUSE 3 only, which breaks standard AppImages. Cross Platform Terminal ships with the type2 runtime that supports both FUSE 2 and FUSE 3 - it just runs.",
       },
       {
         title: "Atomic updates",
